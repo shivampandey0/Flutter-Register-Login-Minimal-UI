@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FormButton extends StatelessWidget {
   final String btnText;
@@ -8,15 +7,17 @@ class FormButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      height: 60.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      minWidth: MediaQuery.of(context).size.width * 0.92,
-      color: Colors.black,
+    var size = MediaQuery.of(context).size;
+    return TextButton(
+      style: TextButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          minimumSize: Size(size.width * 0.92, 60),
+          backgroundColor: Colors.black),
       onPressed: () {},
       child: Text(
         btnText,
-        style: GoogleFonts.montserrat(
+        style: TextStyle(
           color: Colors.white,
           fontSize: 18,
           fontWeight: FontWeight.bold,

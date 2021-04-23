@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LabelButton extends StatelessWidget {
   final String liteText;
@@ -18,11 +17,11 @@ class LabelButton extends StatelessWidget {
         child: RichText(
           text: TextSpan(
               text: liteText,
-              style: GoogleFonts.montserrat(color: Colors.black),
+              style: TextStyle(color: Colors.black),
               children: [
                 TextSpan(
                     text: boldText,
-                    style: GoogleFonts.montserrat(
+                    style: TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold))
               ]),
         ),

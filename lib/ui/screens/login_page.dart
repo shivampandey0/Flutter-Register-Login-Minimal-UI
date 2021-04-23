@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:register_login_app/ui/screens/register_page.dart';
 import 'package:register_login_app/ui/widgets/form_button.dart';
 import 'package:register_login_app/ui/widgets/form_text_field.dart';
 import 'package:register_login_app/ui/widgets/label_button.dart';
@@ -71,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 LabelButton(
                   liteText: 'Not registered yet?',
                   boldText: ' Create Account.',
+                  pressed: ()=> navigateToRegisterPage(),
                 )
               ],
             ),
@@ -78,5 +80,11 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+   navigateToRegisterPage() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext ctx) {
+      return RegisterPage();
+    }));
   }
 }
